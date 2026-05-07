@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import { useEffect } from 'react'
 import css from "./MovieModal.module.css"
 import type { Movie } from '../../types/movie'
 import { createPortal } from 'react-dom'
