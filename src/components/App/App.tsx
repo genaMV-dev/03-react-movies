@@ -1,12 +1,13 @@
 import toast, { Toaster } from 'react-hot-toast';
-import SearchBar from './SearchBar/SearchBar'
+import SearchBar from '../SearchBar/SearchBar'
 import { useState } from 'react';
-import { fetchMovies } from '../services/movieService';
-import type { Movie } from '../types/movie';
-import MovieGrid from './MovieGrid/MovieGrid';
-import MovieModal from './MovieModal/MovieModal';
-import Loader from './Loader/Loader';
-import ErrorMessage from './ErrorMessage/ErrorMessage';
+import { fetchMovies } from '../../services/movieService';
+import type { Movie } from '../../types/movie';
+import MovieGrid from '../MovieGrid/MovieGrid';
+import MovieModal from '../MovieModal/MovieModal';
+import Loader from '../Loader/Loader';
+import ErrorMessage from '../ErrorMessage/ErrorMessage';
+import css from "./App.module.css"
 
 const App = () => {
   const [movies, setMovies] = useState<Movie[]>([]);
@@ -51,7 +52,7 @@ const App = () => {
   }
 
   return (
-    <div>
+    <div className={css.app}>
       <SearchBar onSearch={handleSearch}/>
       <Toaster
   position="top-center"
