@@ -26,7 +26,7 @@ const MovieModal = ({movie, onClose}:MovieModalProps) => {
   
     return (
     createPortal(<div onClick={onClose} className={css.backdrop} role="dialog" aria-modal="true">
-  <div className={css.modal}>
+  <div className={css.modal} onClick={(e) => e.stopPropagation()}>
     <button onClick={onClose} className={css.closeButton} aria-label="Close modal">
       &times;
     </button>
