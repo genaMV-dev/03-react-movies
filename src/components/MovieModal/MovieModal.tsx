@@ -22,7 +22,7 @@ const MovieModal = ({movie, onClose}:MovieModalProps) => {
                 document.body.style.overflow = "auto"
             }
         }
-    , [])
+    , [onClose])
   
     return (
     createPortal(<div onClick={onClose} className={css.backdrop} role="dialog" aria-modal="true">
@@ -32,7 +32,7 @@ const MovieModal = ({movie, onClose}:MovieModalProps) => {
     </button>
     <img
       src={`https://image.tmdb.org/t/p/w500/${movie.backdrop_path}`}
-      alt="movie_title"
+      alt={movie.title}
       className={css.image}
     />
     <div className={css.content}>

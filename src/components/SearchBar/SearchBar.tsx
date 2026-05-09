@@ -10,11 +10,13 @@ const SearchBar = ({onSubmit}: SearchBarProps) => {
         const topic = formData.get(`query`) as string
         
         
-       onSubmit(topic)
-
-       if(!topic){
+        if(!topic){
           toast.error("Please enter your search query.");
+          return
         }
+        onSubmit(topic)
+
+       
     }
 
     
